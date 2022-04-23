@@ -8,7 +8,7 @@
             <img alt="built with TypeScript" src="https://img.shields.io/badge/built%20with-TypeScript-blue.svg?style=plastic">
         </a>
         <a href="https://github.com/ziord/robin/blob/master/LICENSE.txt">
-            <img alt="robin license" src="https://img.shields.io/github/license/ziord/robin?style=plastic" >
+            <img alt="robin license" src="https://img.shields.io/github/license/ziord/robin?style=plastic">
         </a>
         <a href="https://github.com/ziord/robin/issues" >
             <img alt="issues" src="https://img.shields.io/github/issues/ziord/robin?style=plastic">
@@ -242,7 +242,7 @@ npm install @ziord/robin
 
 ## Contributing
 
-Contributions are welcome! See the [contribution guidelines](https://github.com/ziord/robin/blob/master/docs/CONTRIBUTING.md) to learn more. Thanks!
+Contributions are welcome! See the [contribution guidelines](https://github.com/ziord/robin/blob/master/CONTRIBUTING.md) to learn more. Thanks!
 
 
 ## Reporting Bugs/Requesting Features
