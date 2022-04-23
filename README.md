@@ -4,6 +4,9 @@
         <img src="https://github.com/ziord/robin/blob/master/docs/assets/robin_img.png" alt="robin img"> 
     </p>
     <p align="center">
+        <a href="https://github.com/ziord/robin/actions">
+            <img alt="ci status" src="https://github.com/ziord/robin/actions/workflows/node.js.yml/badge.svg?style=plastic">
+        </a>
         <a href="https://www.typescriptlang.org/">
             <img alt="built with TypeScript" src="https://img.shields.io/badge/built%20with-TypeScript-blue.svg?style=plastic">
         </a>
