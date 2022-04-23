@@ -35,14 +35,12 @@
   ],
   "author": "Jeremiah Ikosin",
   "license": "MIT",
-  "dependencies": {
-    "@types/node": "^17.0.18"
-  },
   "devDependencies": {
     "@babel/core": "^7.17.9",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-typescript": "^7.16.7",
     "@types/jest": "^27.4.1",
+    "@types/node": "^17.0.25",
     "@typescript-eslint/eslint-plugin": "^5.20.0",
     "@typescript-eslint/parser": "^5.20.0",
     "babel-jest": "^27.5.1",
