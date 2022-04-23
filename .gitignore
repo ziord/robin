@@ -3,7 +3,6 @@ dist
 grammars
 .idea
 coverage
-package-lock.json
 dump.txt
 todo.txt
 .DS_Store
