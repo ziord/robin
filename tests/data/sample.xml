@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE tools>
+<tools>
+    <tool id="1" mode="xml">xml parsing</tool>
+    <tool id="2" mode="html">html parsing</tool>
+    <tool id="3" mode="printer">pretty printing</tool>
+    <tool id="4" mode="lib">xpath and dom api</tool>
+    <random id="5" xml:context="lib">
+        <xml:foo>some foo bar thingy</xml:foo>
+        <bar>123</bar>
+        <a:fun xmlns:a="some uri">not so bad</a:fun>
+        <!--        foo-->
+        <?ok p-i is really cool ?>
+        <!--okay-->
+    </random>
+</tools>
