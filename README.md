@@ -26,7 +26,7 @@
 Robin is an XML parser and processing library that supports a sane version of HTML. It features a set of DOM utilities, including support for XPath 1.0 for interacting with and manipulating XML/HTML documents. Typical use-cases would be processing XML or HTML files, web scraping, etc.
 Worthy to note that robin is a non-validating parser, which means that DTD structures are not used for validating the markup document.
 
-### Quick Start
+## Quick Start
 
 All samples below are for the Node.js runtime.
 
@@ -224,31 +224,32 @@ console.log(text);
 See the [web scraper example](https://github.com/ziord/robin/blob/master/examples) for more usage.
 
 
-### Documentation
+## Documentation
 
 This is still a work in progress. Take a look at the [examples](https://github.com/ziord/robin/blob/master/examples) for now.
 
-### Quick Questions
+## Quick Questions
 
 If you have little questions that you feel isn't worth opening an issue for, use [the project's discussions.](https://github.com/ziord/robin/discussions)
 
 
-### Installation
+## Installation
 
+Simply run the following command in your terminal:
 ```
 npm install @ziord/robin
 ```
 
-### Contributing
+## Contributing
 
 Contributions are welcome! See the [contribution guidelines](https://github.com/ziord/robin/blob/master/docs/CONTRIBUTING.md) to learn more. Thanks!
 
 
-### Reporting Bugs/Requesting Features
+## Reporting Bugs/Requesting Features
 
 Please [open an issue.](https://github.com/ziord/robin/issues) Checkout the [issue template.](https://github.com/ziord/robin/blob/master/.github/ISSUE_TEMPLATE)
 
 
-### License
+## License
 
 Robin is distributed under the [MIT License](https://github.com/ziord/robin/blob/master/LICENSE.txt).
