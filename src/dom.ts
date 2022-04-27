@@ -27,7 +27,7 @@ export type SelectFilterT =
         name: ElementName;
         text: string | StringFilterT;
         comment: string | StringFilterT;
-        target: string; // pi-target
+        target: string | StringFilterT; // pi-target | pi-value
         filter: nodes.FilterFn;
       }>
     >;
@@ -168,9 +168,13 @@ export class DOMFilter {
     }
   }
 
-  static TextFilter(pattern: StringFilterT | string): nodes.FilterFn {
+  private static ValueFilter(
+    pattern: StringFilterT | string,
+    check: nodes.FilterFn
+  ): nodes.FilterFn {
     return (node: nodes.RNodeT) => {
-      if (!nodes.isText(node)) return false;
+      if (!check(node)) return false;
+      node = node as nodes.TextNode | nodes.CommentNode | nodes.PINode;
       if (typeof pattern === "string") {
         return pattern === node.value;
       } else if (typeof pattern === "object") {
@@ -182,25 +186,22 @@ export class DOMFilter {
     };
   }
 
-  static CommentFilter(pattern: StringFilterT | string): nodes.FilterFn {
-    return (node: nodes.RNodeT) => {
-      if (!nodes.isComment(node)) return false;
-      if (typeof pattern === "string") {
-        return pattern === node.value;
-      } else if (typeof pattern === "object") {
-        const match = pattern.match;
-        const nodeValue = pattern.trim ? node.value.trim() : node.value;
-        return this.performMatch(match, nodeValue, pattern.value);
-      }
-      return false;
-    };
+  static TextFilter(pattern: StringFilterT | string): nodes.FilterFn {
+    return DOMFilter.ValueFilter(pattern, nodes.isText);
   }
 
-  static PIFilter(pattern: string): nodes.FilterFn {
-    return (node: nodes.RNodeT) => {
-      if (!nodes.isPI(node)) return false;
-      return node.target === pattern;
-    };
+  static CommentFilter(pattern: StringFilterT | string): nodes.FilterFn {
+    return DOMFilter.ValueFilter(pattern, nodes.isComment);
+  }
+
+  static PIFilter(pattern: StringFilterT | string): nodes.FilterFn {
+    if (typeof pattern === "string") {
+      return (node: nodes.RNodeT) => {
+        if (!nodes.isPI(node)) return false;
+        return node.target === pattern;
+      };
+    }
+    return DOMFilter.ValueFilter(pattern, nodes.isPI);
   }
 }
 
