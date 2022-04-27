@@ -178,6 +178,10 @@ test("dom: select", () => {
   ).toEqual(1);
   // pi
   expect(robin.dom(root).findAll({ target: "ok" }).length).toEqual(1);
+  expect(
+    robin.dom(root).findAll({ target: { value: "cool", match: "partial" } })
+      .length
+  ).toEqual(1);
   expect(robin.dom(root).findAll({ target: "pop" }).length).toEqual(0);
   expect(
     robin.dom(root).findAll({ filter: (n: RNodeT) => true }).length
