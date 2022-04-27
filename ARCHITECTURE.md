@@ -26,6 +26,7 @@ A parsed document can be queried using the xpath engine which supports the xpath
 XPath features not supported include:
 - Normalization of attribute values
 - Normalization of namespace URIs.
+- Variable bindings (coming soon!)
 
 Bonus feature supported includes:
 - Comments (from xpath 2.0)
