@@ -584,7 +584,7 @@ test("dom: insertBefore", () => {
   const count = rootElem.children.length;
   const d = new DOM();
   // insert element
-  const newElem: ElementNode = d.createElement("new");
+  const newElem: ElementNode = d.createElement("new", "bar");
   const elem = robin.dom(root).find<ElementNode>("tool")!;
   expect(elem).not.toBeNull();
   expect(robin.dom(elem).insertBefore(newElem)).toBe(true);
