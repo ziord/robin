@@ -32,7 +32,7 @@ describe("general expectations tests", () => {
     // allowCopy must be specified when running xpath on a non RootNode (Document node) object
     expect(() => robin.path(element)).toThrow();
     // use a different root node. query() returns an XDataCType (number | string | boolean | XNodeSet)
-    let nodeset = <XNodeSet>robin.path(element, true).query(".");
+    let nodeset = <XNodeSet<RootNode>>robin.path(element, true).query(".");
     expect(nodeset.size).toBe(1);
     let contextNode = Array.from<RNodeT>(nodeset)[0];
     // a virtual RootNode object is created for a non-RootNode object used in path
@@ -40,13 +40,13 @@ describe("general expectations tests", () => {
     expect(contextNode).not.toBe(root);
     expect(contextNode).not.toBe(element);
     // we should get the root since it's an actual RootNode
-    nodeset = <XNodeSet>robin.path(root, true).query(".");
+    nodeset = <XNodeSet<RootNode>>robin.path(root, true).query(".");
     expect(nodeset.size).toBe(1);
     expect(Array.from(nodeset)[0]).toBe(root);
     // we can decide not to use allowCopy, this means that the element would not be cloned,
     // its root node ancestor/parent would be sought out automatically so long as it can be found
     expect(element.parent).toBe(root);
-    nodeset = <XNodeSet>robin.path(element, false).query(".");
+    nodeset = <XNodeSet<RootNode>>robin.path(element, false).query(".");
     expect(nodeset.size).toBe(1);
     contextNode = Array.from(nodeset)[0];
     expect(contextNode).toBeInstanceOf(RootNode);
@@ -128,9 +128,9 @@ describe("stress tests", () => {
     const data = loadData("sample.html");
     const robin = new Robin(data, "HTML");
     const path: XPath = robin.path(robin.getRoot());
-    let nodeset = <XNodeSet>path.query("//*[. >= 123]");
+    let nodeset = <XNodeSet<ElementNode>>path.query("//*[. >= 123]");
     expect(nodeset.size).toBe(1);
-    const elem = Array.from(nodeset)[0] as ElementNode;
+    const elem = Array.from(nodeset)[0];
     expect(elem.name.qname).toBe("p");
     expect(elem.numberValue()).toBe(123);
     expect(elem.stringValue()).toBe("123");
@@ -142,7 +142,9 @@ describe("stress tests", () => {
   });
 
   test("find an element by path", () => {
-    let nodeset = <XNodeSet>robin.path(root).query("//tool[@node()=2][1]");
+    let nodeset = <XNodeSet<RNodeT>>(
+      robin.path(root).query("//tool[@node()=2][1]")
+    );
     expect(nodeset.size).toEqual(1);
     let elem = <ElementNode>Array.from(nodeset)[0];
     expect(elem.name.qname).toBe("tool");
