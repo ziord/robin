@@ -23,6 +23,11 @@
             <img alt="forks" src="https://img.shields.io/github/forks/ziord/robin?style=plastic">
         </a>
         <a href=""><img src="https://wakatime.com/badge/user/d428bbee-8cff-4d0f-9e46-7c57e2a8032e/project/9d7c1f69-dd34-4f27-a25d-60fbfa716192.svg" alt="wakatime"></a>
+        <p align="center">
+            <strong>
+                <a href="https://ziord.github.io/robin/">[VIEW DOCUMENTATION]</a>
+            </strong>
+        </p>
     </p>
 </p>
 
@@ -229,7 +234,7 @@ See the [web scraper example](https://github.com/ziord/robin/blob/master/example
 
 ## Documentation
 
-This is still a work in progress. Take a look at the [examples](https://github.com/ziord/robin/blob/master/examples) for now.
+[Check out the docs](https://github.com/ziord/robin). You can also take a look at some [examples here](https://github.com/ziord/robin/blob/master/examples).
 
 ## Quick Questions
 
