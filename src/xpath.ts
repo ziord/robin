@@ -1118,8 +1118,12 @@ export class XParser {
 /**
  * Data & Context
  */
-export type XNodeSet = Set<nodes.RNodeT>;
-export type XDataCType = number | string | boolean | XNodeSet;
+export type XNodeSet<T extends nodes.RNodeT = nodes.RNodeT> = Set<T>;
+export type XDataCType<T extends nodes.RNodeT = nodes.RNodeT> =
+  | number
+  | string
+  | boolean
+  | XNodeSet<T>;
 export type XReturnType = number | string | boolean | nodes.RNodeT;
 enum XDataType {
   Number = "XNumber",
@@ -4087,7 +4091,7 @@ export class XPath {
     const v: XDataCType = this.query(queryString);
     if (v instanceof Set) {
       if (!v.size) return null;
-      return Array.from<T>(v as Set<T>)[0];
+      return Array.from<T>(v as Set<Exclude<T, string | number | boolean>>)[0];
     }
     return <T>v;
   }
@@ -4096,7 +4100,7 @@ export class XPath {
     const v: XDataCType = this.query(queryString);
     if (v instanceof Set) {
       if (!v.size) return [];
-      return Array.from<T>(v as Set<T>);
+      return Array.from<T>(v as Set<Exclude<T, string | number | boolean>>);
     }
     return [<T>v];
   }
