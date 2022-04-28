@@ -31,6 +31,8 @@
     </p>
 </p>
 
+---
+
 Robin is an XML parser and processing library that supports a sane version of HTML. It features a set of DOM utilities, including support for XPath 1.0 for interacting with and manipulating XML/HTML documents. Typical use-cases would be processing XML or HTML files, web scraping, etc.
 Worthy to note that robin is a non-validating parser, which means that DTD structures are not used for validating the markup document.
 
@@ -234,7 +236,7 @@ See the [web scraper example](https://github.com/ziord/robin/blob/master/example
 
 ## Documentation
 
-[Check out the docs](https://github.com/ziord/robin). You can also take a look at some [examples here](https://github.com/ziord/robin/blob/master/examples).
+[Check out the docs](https://ziord.github.io/robin/). You can also take a look at some [examples here](https://github.com/ziord/robin/blob/master/examples).
 
 ## Quick Questions
 
