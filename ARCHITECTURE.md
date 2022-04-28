@@ -6,7 +6,7 @@ Below is an overview of the project architecture:
 <br/>
 
 <p align="center">
-    <img src="https://github.com/ziord/robin/blob/master/docs/assets/architecture_img_1.png" alt="architecture-image-1">
+    <img src="https://github.com/ziord/robin/blob/master/docs/assets/images/architecture_img_1.png" alt="architecture-image-1">
 </p>
 
 <br/>
@@ -19,7 +19,7 @@ The Robin API provides an abstraction over both the XPath and DOM APIs, making i
 A parsed document can be queried using the xpath engine which supports the xpath 1.0 specification with some exclusions mentioned [below](#xpath-non-supported). The engine receives an XPath query string and a node object, as input and produces an `XDataCType (number | string | boolean | nodeset)`, as its output/result. The query string is parsed into an AST (Abstract Syntax Tree) which is then evaluated along with the node object received.
 
 <p align="center">
-    <img src="https://github.com/ziord/robin/blob/master/docs/assets/architecture_img_2.png" alt="architecture-image-2">
+    <img src="https://github.com/ziord/robin/blob/master/docs/assets/images/architecture_img_2.png" alt="architecture-image-2">
 </p>
 
 <a name='xpath-non-supported'></a>

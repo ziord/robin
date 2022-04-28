@@ -1,7 +1,7 @@
 
 <p align="center">
     <p align="center">
-        <img src="https://github.com/ziord/robin/blob/master/docs/assets/robin_img.png" alt="robin img"> 
+        <img src="https://github.com/ziord/robin/blob/master/docs/assets/images/robin_img.png" alt="robin img"> 
     </p>
     <p align="center">
         <a href="https://github.com/ziord/robin/actions">
